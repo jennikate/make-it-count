@@ -36,6 +36,16 @@ class Constituency extends React.Component {
     return i
   }
 
+  getPartyUrl(elem) {
+    console.log(elem)
+    let partyUrl
+    switch (elem) {
+      case 'Labour Party' : partyUrl = 'https://labour.org.uk/'; break
+      case 'Green Party' : partyUrl =  'https://my.greenparty.org.uk/'; break
+    }
+    return partyUrl
+  }
+
   render() {
     if (!this.state.persons.length === 0) {
       return <h1>...Loading</h1>
@@ -46,7 +56,7 @@ class Constituency extends React.Component {
         <div className='container'>
           <div className='column is-half-mobile is-one-third-tablet is-one-quarter-desktop'>
 
-
+[]
             {this.state.persons.map((elem, i) => {
               return (
                 <div key={i} className="card">
@@ -57,7 +67,7 @@ class Constituency extends React.Component {
                   </div>
                   <div className='card-content'>
                     <p>{elem.name}</p>
-                    <p>{elem.candidacies[(elem.candidacies.length - 1)].party.name}</p>
+                    <p><a href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
                     {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p>{elem.identifiers[this.getIndex(elem.identifiers)].value}</p>}
                   </div>
                 </div>
