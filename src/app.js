@@ -6,11 +6,13 @@ import 'bulma'
 import './styles/style.scss'
 
 import Home from './components/Home'
+import Constituency from './components/Constituency'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route exact path='/constituency' component={Constituency} />
     </Switch>
   </BrowserRouter>
 
