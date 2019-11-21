@@ -21,11 +21,10 @@ class Constituency extends React.Component {
   getCandidate2() {
     const arr = this.state.candidates
     const currentArr = [...this.state.persons]
-    console.log('currentarr', currentArr)
 
     arr.forEach(element => {
-      currentArr.push(element)
-      console.log('currentarrpush', currentArr)
+      axios.get(element.person.url)
+        .then(resp => currentArr.push(resp.data))
     })
     this.setState({ persons: currentArr })
 
@@ -38,6 +37,8 @@ class Constituency extends React.Component {
 
 
   render() {
+    // if (!this.state.persons) { return <h1>Loading...</h1> }
+    
     console.log(this.state.persons)
     return <section className='section'>
       <h1 className='title'>{this.props.match.params.id}</h1>
@@ -46,9 +47,15 @@ class Constituency extends React.Component {
           {this.state.persons.map((elem, i) => {
             return (
               <div key={i} className="card">
-                
-                <p>{elem.person.name}</p>
-
+                <div cardName='card-image'>
+                  <figure className='image is-4by3'>
+                    <img src={elem.person.name} />
+                  </figure>
+                </div>
+                <div className='card-content'>
+                  <p>{elem.person.name}</p>
+                  <p>{elem.party.name}</p>
+                </div>
               </div>
             )
           })}
