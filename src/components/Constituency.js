@@ -2,26 +2,41 @@ import React from 'react'
 import axios from 'axios'
 
 
-const Constituency = ({ parliamentaryConstituency }) => (
-  
+class Constituency extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      parliamentaryConstituency: '',
+      postcode: ''
+    }
+
+  }
+
+  componentDidMount() {
+    this.setState({
+      ...this.props.location.state
+    },
+    () => {
+      axios.get(`http://api.postcodes.io/postcodes/${this.state.postcode}`)
+        .then(resp => this.setState({ parliamentaryConstituency: resp.data.result.parliamentary_constituency }))          
+        .catch(err => this.setState({ errors: err.response.data.error }))
+    }
+    )
+  }
 
 
-  <p>THIS IS THE NEW THING {parliamentaryConstituency}</p>
-  
-  
-  
+  render() {
+    console.log(this.state)
+    return (
 
+      <p>{this.state.parliamentaryConstituency.toLowerCase().split(' ').join('-')}</p>
 
+    )
+  }
+}
 
-  // console.log(`https://candidates.democracyclub.org.uk/api/next/ballots/parl.${parliamentaryConstituency.toLowerCase().split(' ').join('-')}.2019-12-12/`)
-
-
-  //parliamentary_constituency.toLowerCase().split(' ').join('_')
-
-  //candidate url
-  //party url
-
-
-)
 
 export default Constituency
+
+
+
