@@ -37,11 +37,11 @@ class Constituency extends React.Component {
   }
 
   getPartyUrl(elem) {
-    console.log(elem)
     let partyUrl
     switch (elem) {
       case 'Labour Party' : partyUrl = 'https://labour.org.uk/'; break
       case 'Green Party' : partyUrl =  'https://my.greenparty.org.uk/'; break
+      default : null
     }
     return partyUrl
   }
@@ -56,7 +56,7 @@ class Constituency extends React.Component {
         <div className='container'>
           <div className='column is-half-mobile is-one-third-tablet is-one-quarter-desktop'>
 
-[]
+
             {this.state.persons.map((elem, i) => {
               return (
                 <div key={i} className="card">
@@ -80,22 +80,6 @@ class Constituency extends React.Component {
       </section >
     )
   }
-
-
-
-
-
-
-
-
-  // onsole.log(`https://candidates.democracyclub.org.uk/api/next/ballots/parl.${parliamentaryConstituency.toLowerCase().split(' ').join('-')}.2019-12-12/`)
-
-
-  //parliamentary_constituency.toLowerCase().split(' ').join('_')
-
-  //candidate url
-  //party url
-
 
 }
 
