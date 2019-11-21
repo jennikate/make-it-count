@@ -25,11 +25,10 @@ class PostcodeSearch extends React.Component {
     e.preventDefault()
     axios.get(`http://api.postcodes.io/postcodes/${this.state.postcode}`)
       .then(resp => {
-        console.log(resp.data.result.parliamentary_constituency)
         this.setState({ parliamentaryConstituency: resp.data.result.parliamentary_constituency })
-        this.props.history.push(`/constituency/:${resp.data.result.parliamentary_constituency}`)
+        this.props.history.push(`/constituency/${resp.data.result.parliamentary_constituency}`)
       })
-      // .catch(err => this.setState({ errors: err.response.data.error }))
+      .catch(err => this.setState({ errors: err.response.data.error }))
   }
 
   
