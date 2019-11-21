@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 // import Constituency from './Constituency'
 
 
@@ -8,7 +8,11 @@ class PostcodeSearch extends React.Component {
   constructor() {
     super()
     this.state = {
-      postcode: ''
+      postcode: '',
+      result: {
+        parliamentaryConstituency: ''
+      },
+      errors: ''
     }
   }
 
@@ -17,7 +21,16 @@ class PostcodeSearch extends React.Component {
     this.setState({ errors: '' })
   }
 
-
+  handleSubmit(e) {
+    e.preventDefault()
+    axios.get(`http://api.postcodes.io/postcodes/${this.state.postcode}`)
+      .then(resp => {
+        console.log(resp.data.result.parliamentary_constituency)
+        this.setState({ parliamentaryConstituency: resp.data.result.parliamentary_constituency })
+        this.props.history.push(`/constituency/:${resp.data.result.parliamentary_constituency}`)
+      })
+      // .catch(err => this.setState({ errors: err.response.data.error }))
+  }
 
   
 
@@ -39,13 +52,7 @@ class PostcodeSearch extends React.Component {
             </div>
           </div>
 
-          <Link
-            to={{
-              pathname: '/constituency',
-              state: this.state
-            }}>
-            Go
-          </Link>
+          <button>go</button>
 
         </div>
       </form>
@@ -54,8 +61,5 @@ class PostcodeSearch extends React.Component {
 }
 
 
-export default PostcodeSearch
+export default withRouter(PostcodeSearch)
 
-
-
-// .then(this.setState({ constituencyId: this.state.parliamentaryConstituency.toLowerCase().split(' ').join('-') }))
