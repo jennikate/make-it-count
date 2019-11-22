@@ -18,7 +18,7 @@ class ElectionResults extends React.Component {
 
   getThisConstituency(elem) {
 
-    const i = this.state.electionResults.findIndex(p => p.constituency.label._value === elem) < 0 ? null : this.state.electionResults.findIndex(p => p.constituency.label._value === elem) 
+    const i = this.state.electionResults.findIndex(p => p.constituency.label._value === elem) < 0 ? null : this.state.electionResults.findIndex(p => p.constituency.label._value === elem)
     // console.log('index', i)
     return i
   }
@@ -29,23 +29,30 @@ class ElectionResults extends React.Component {
       return <h1>...Loading</h1>
     }
 
-    // console.log(this.getThisConstituency(this.props.constituencyName))
-    console.log(Array.isArray(this.state.electionResults[1]))
-    console.log(typeof this.state.electionResults[1])
-    console.log(this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].resultOfElection)
-    // console.log(this.state.electionResults)
-    // console.log(this.state.electionResults[0].constituency.label._value)
-    // console.log(this.state.electionResults[0].resultOfElection)
-    // console.log(this.state.electionResults[0].electorate)
-    // console.log(this.state.electionResults[0].majority)
-    // console.log(this.state.electionResults[0].turnout)
-
-    //we have constituency name
-
     return (
-      <div>
-        {this.props.constituencyName}
-      </div>
+      <section className='section'>
+        <div className='container'>
+          <h1 className='title'>2017 General Election Results</h1>
+          <h2 className='subtitle'>Result: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].resultOfElection}</h2>
+
+          <div className='columns'>
+            <div className='column'>
+              chart
+            </div>
+            <div className='column'>
+              <div>
+                Electorate: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].electorate}
+              </div>
+              <div>
+                Turnout: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].turnout}
+              </div>
+              <div>
+                Majority: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].majority}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section >
     )
   }
 
