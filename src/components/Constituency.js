@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import ElectionResults from './ElectionResults'
+
 
 
 class Constituency extends React.Component {
@@ -43,6 +45,9 @@ class Constituency extends React.Component {
     switch (elem) {
       case 'Labour Party': partyUrl = 'https://labour.org.uk/'; break
       case 'Green Party': partyUrl = 'https://my.greenparty.org.uk/'; break
+      case 'Liberal Democrats': partyUrl = 'https://www.libdems.org.uk/'; break
+      case 'Conservative and Unionist Party': partyUrl = 'https://vote.conservatives.com/'; break
+      case 'The Brexit Party': partyUrl = 'https://www.thebrexitparty.org/'; break
       default: null
     }
     return partyUrl
@@ -54,28 +59,34 @@ class Constituency extends React.Component {
     }
     return (
       <div>
-        < section className='section' >
-          <h1 className='title'>{`Your Constituency: ${this.props.match.params.id}`}</h1>
-          <div className='container'>
-            <div className="columns is-mobile is-multiline">
-              {this.state.persons.map((elem, i) => {
-                return (
-                  <div key={i} className='column is-half-mobile is-one-third-tablet is-one-quarter-desktop'>
-                    <div className="card">
-                      <div className='card-image'>
-                        <figure className='image'>
-                          <img src={elem.images[0].image_url} />
-                        </figure>
-                      </div>
-                      <div className='card-content'>
-                        <p>{elem.name}</p>
-                        <p><a href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
-                        {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p>{elem.identifiers[this.getIndex(elem.identifiers)].value}</p>}
+        <nav>
+          <Link to='/' className='logo'>Make it count</Link>
+        </nav>
+        <section className='hero is-fullheight'>
+          <div className='hero-body'>
+            <div className='container'>
+              <h1 className='title'>Your Constituency: <span>{`${this.props.match.params.id}`}</span></h1>
+              <h2> MP Candidates</h2>
+              <div className="columns is-mobile is-multiline">
+                {this.state.persons.map((elem, i) => {
+                  return (
+                    <div key={i} className='column is-full-mobile is-one-third-tablet is-one-quarter-desktop'>
+                      <div className="card">
+                        <div className='card-image'>
+                          <figure className='image'>
+                            <img src={elem.images[0].image_url} />
+                          </figure>
+                        </div>
+                        <div className='card-content'>
+                          <p id='candidateName'>{elem.name}</p>
+                          <p><a id='candidateParty' href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
+                          {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p><a id='candidateWebsite' href={elem.identifiers[this.getIndex(elem.identifiers)].value}>Candidate Website</a></p>}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </div>
         </section >

@@ -29,30 +29,40 @@ class ElectionResults extends React.Component {
       return <h1>...Loading</h1>
     }
 
-    return (
-      <section className='section'>
-        <div className='container'>
-          <h1 className='title'>2017 General Election Results</h1>
-          <h2 className='subtitle'>Result: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].resultOfElection}</h2>
+    const thisElectorate = this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].electorate
+    const thisTurnout = this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].turnout
+    const thisTurnoutRate = (thisTurnout / thisElectorate) * 100
+    const thisNonVoter = ((thisElectorate - thisTurnout) / thisElectorate) * 100
 
-          <div className='columns'>
-            <div className='column'>
-              chart
-            </div>
-            <div className='column'>
-              <div>
-                Electorate: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].electorate}
+    return (
+
+      <section className='hero is-fullheight' id='hero-background'>
+        <div className='hero-body'>
+          <div className='container'>
+            <h2 className='title'>2017 General Election Results</h2>
+            <h2>Result: <span>{this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].resultOfElection}</span></h2>
+
+            <div className='columns is-centered'>
+              <div className='column is-one-quarter' id='left-box'>
+
+                <small id='turnout'>Voter Turnout</small>
+                <div className="pie" style={{ '--segment1': thisTurnoutRate, '--segment2': thisNonVoter }}></div>
               </div>
-              <div>
-                Turnout: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].turnout}
-              </div>
-              <div>
-                Majority: {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].majority}
+              <div className='column is-one-quarter' id='right-box'>
+                <div>
+                  <span>Majority:</span> {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].majority}
+                </div>
+                <div>
+                  <span>Electorate:</span> {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].electorate}
+                </div>
+                <div>
+                  <span>Turnout:</span> {this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].turnout}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section >
+      </section>
     )
   }
 
