@@ -35,21 +35,13 @@ class PostcodeSearch extends React.Component {
 
   render() {
     return (
-      <form id='form' onSubmit={(e) => this.handleSubmit(e)}>
-        <div className='field is-horizontal'>
-          <div className='field-label is-normal'>
-            <label className='label' htmlFor='postcode'>Enter postcode</label>
-          </div>
-          <div className='field-body'>
-            <p className='control'>
-              <input className='input' name='postcode' type='text' id='postcode' onChange={(e) => this.handleUpdate(e)} />
-              {this.state.errors && <small className='help is-danger'>
-                {this.state.errors}
-              </small>}
-            </p>
-          </div>
-          <button className="button">Search</button>
-        </div>
+      <form className='flex-horizontal my-styles' onSubmit={(e) => this.handleSubmit(e)}>
+        <label htmlFor='postcode'>Enter postcode</label>
+        <input className='input' name='postcode' type='text' id='postcode' onChange={(e) => this.handleUpdate(e)} />
+        {this.state.errors && <small className='help is-danger'>
+          {this.state.errors}
+        </small>}
+        <button className="button">Find your candidates</button>
       </form>
     )
   }

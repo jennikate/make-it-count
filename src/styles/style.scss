@@ -227,3 +227,32 @@ nav a, nav a:hover {
   color: #999999;
   font-size: 2rem;
 }
+
+/* ---------------------------- */
+/*  CONTAINERS                        */
+/* ---------------------------- */
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* ---------------------------- */
+/*  FORM                        */
+/* ---------------------------- */
+
+form.my-styles {
+  justify-content: center;
+}
+
+.my-styles input {
+  max-width: 15%;
+  width: 15%;
+}
+
+.my-styles label {
+  color: white;
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+}

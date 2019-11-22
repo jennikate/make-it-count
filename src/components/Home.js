@@ -10,8 +10,11 @@ const Home = () => (
         </div>
         <div>
           <h1 className='line-1 anim-typewriter has-text-centered'>Make it count</h1>
+        </div>
+        <div>
           <PostcodeSearch />
         </div>
+
       </div>
     </div>
   </section>
