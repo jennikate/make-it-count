@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import ElectionResults from './ElectionResults'
 
 
 class Constituency extends React.Component {
@@ -52,31 +53,36 @@ class Constituency extends React.Component {
       return <h1>...Loading</h1>
     }
     return (
-      < section className='section' >
-        <h1 className='title'>{`Your Constituency: ${this.props.match.params.id}`}</h1>
-        <div className='container'>
-          <div className="columns is-mobile is-multiline">
-            {this.state.persons.map((elem, i) => {
-              return (
-                <div key={i} className='column is-half-mobile is-one-third-tablet is-one-quarter-desktop'>
-                  <div className="card">
-                    <div className='card-image'>
-                      <figure className='image'>
-                        <img src={elem.images[0].image_url} />
-                      </figure>
-                    </div>
-                    <div className='card-content'>
-                      <p>{elem.name}</p>
-                      <p><a href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
-                      {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p>{elem.identifiers[this.getIndex(elem.identifiers)].value}</p>}
+      <div>
+        < section className='section' >
+          <h1 className='title'>{`Your Constituency: ${this.props.match.params.id}`}</h1>
+          <div className='container'>
+            <div className="columns is-mobile is-multiline">
+              {this.state.persons.map((elem, i) => {
+                return (
+                  <div key={i} className='column is-half-mobile is-one-third-tablet is-one-quarter-desktop'>
+                    <div className="card">
+                      <div className='card-image'>
+                        <figure className='image'>
+                          <img src={elem.images[0].image_url} />
+                        </figure>
+                      </div>
+                      <div className='card-content'>
+                        <p>{elem.name}</p>
+                        <p><a href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
+                        {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p>{elem.identifiers[this.getIndex(elem.identifiers)].value}</p>}
+                      </div>
                     </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
-        </div>
-      </section >
+        </section >
+        <section className='section'>
+          <ElectionResults constituencyName={this.props.match.params.id} />
+        </section>
+      </div>
     )
   }
 

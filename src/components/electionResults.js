@@ -22,17 +22,28 @@ class ElectionResults extends React.Component {
       .catch(err => console.log(err.response.data.error))
   }
 
+  getThisConstituency(elem) {
+
+    const i = this.state.electionResults.findIndex(p => p.constituency.label._value === elem) < 0 ? null : this.state.electionResults.findIndex(p => p.constituency.label._value === elem) 
+    console.log('index', i)
+  }
+
+
   render() {
-    
-    console.log(Array.isArray(this.state.electionResults[0].constituency))
-    console.log(this.state.electionResults[0].constituency.label._value)
-    console.log(this.state.electionResults[0].resultOfElection)
-    console.log(this.state.electionResults[0].electorate)
-    console.log(this.state.electionResults[0].majority)
-    console.log(this.state.electionResults[0].turnout)
+
+    console.log(this.getThisConstituency(this.props.constituencyName))
+    // console.log(Array.isArray(this.state.electionResults[0].constituency))
+    // console.log(this.state.electionResults[0].constituency.label._value)
+    // console.log(this.state.electionResults[0].resultOfElection)
+    // console.log(this.state.electionResults[0].electorate)
+    // console.log(this.state.electionResults[0].majority)
+    // console.log(this.state.electionResults[0].turnout)
+
+    //we have constituency name
+
     return (
       <div>
-        hi
+        {this.props.constituencyName}
       </div>
     )
   }
