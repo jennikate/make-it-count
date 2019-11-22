@@ -7,7 +7,6 @@ import './styles/style.scss'
 
 import Home from './components/Home'
 import Constituency from './components/Constituency'
-import ElectionResults from './components/ElectionResults'
 
 const App = () => (
   <BrowserRouter>

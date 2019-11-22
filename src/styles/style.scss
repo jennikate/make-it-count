@@ -1,146 +1,117 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed');
 
 * {
-  box-sizing: border-box;
-  
+  box-sizing: border-box; 
 }
+
+
+/* ---------------------------- */
+/*  CONTAINERS                  */
+/* ---------------------------- */
 
 body {
   font-family: 'Oswald', sans-serif;
-  
 }
-
-#hero {
-  background-color: black;
-}
-
-h1 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 0;
-  font-weight: 900px;
-  color: white;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
-.title {
-  font-size: 3rem;
-}
-.title span {
-  color: rgb(180, 2, 2);
-}
-
-.line-1{
-    position: relative;
-    top: 50%;  
-    width: 8em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    // font-size: 180%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
-}
-
-
-.anim-typewriter{
-  animation: typewriter 1.8s steps(35) 1s 1 normal both,
-             blinkTextCursor 1.2s steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 6em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
-
-.label {
-  color: white;
-  font-size: 30px;
-}
-
-
-.button {
-  background-color: rgb(180, 2, 2);
-  color: white;
-  font-family: 'Oswald', sans-serif;
-  margin-left: 10px;
-}
-
-.card {
-  height: 100%;
-}
-
-#form {
+.flex-horizontal {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
-
-.card-image {
-  display: flex; 
-  justify-content: center;
-}
-
-.card-content {
-  margin-top: 10px;
-}
-.image{
-  width: 150px;
-  margin: 10px;
-}
-
-img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    border-radius: 100%;
-    margin-top: 5px;
-  }
-
-  #hero-background {
-    background-color: black;
-  }
-
-
-  #hero-background .container {
-    color: white;
-  }
-
-#candidateName {
-  font-weight: bold; 
-  font-size: 20px;
-  margin-bottom: 2px;
-}
-
-#candidateParty {
-  font-size: 22px;
-  margin-bottom: 2px;
-}
-
-#candidateWebsite{
-  color: rgb(122, 121, 121);
-  text-decoration: underline;
-}
-
-
+/* overwrites Bulma */
 section {
   text-align: center;
-  .container {
+}
+.container {
     padding-bottom: 3rem;
-    position: relative;
-  }
-  &:last-of-type {
-    .container {
-      border-bottom: 0;
-    }
-  }
 }
 
 
+/* ---------------------------- */
+/*  HERO SECTIONS               */
+/* ---------------------------- */
+.hero-colored {
+  background-color: black;
+  color: #ffffff;
+}
+.hero-colored h2 {
+  color: #ffffff;
+}
+.hero-colored h2 span {
+  color: rgb(180, 2, 2);
+}
+.hero-colored span {
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+/*  ANIMATION                */
+.line-1{
+  position: relative;
+  top: 50%;  
+  width: 8em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  // font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+.anim-typewriter{
+animation: typewriter 1.8s steps(35) 1s 1 normal both,
+           blinkTextCursor 1.2s steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 6em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
+}
+
+
+/* ---------------------------- */
+/*  NAV                         */
+/* ---------------------------- */
+
+nav {
+  background-color: #111;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 15px;
+  color: white;
+}
+nav a, nav a:hover {
+  color: white;
+}
+
+
+/* ---------------------------- */
+/*  FOOTER                      */
+/* ---------------------------- */
+
+footer.my-styles {
+  background-color: #333333;
+  font-size: 1rem;
+  color: #dddddd;
+}
+footer.my-styles a {
+  color: #dddddd;
+}
+
+
+/* ---------------------------- */
+/*  TEXT                        */
+/* ---------------------------- */
+
+h1 {
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+}
 .home h1 {
-  font-size: 5rem;
+  font-size: 5.5rem;
 }
 
 h2 {
@@ -150,17 +121,85 @@ h2 {
   margin: 1.5rem 1.5rem 2.5rem;
 }
 
-#hero-background h2 {
-  color: white;
+.tagline {
+  color: #999999;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
-#hero-background h2 span {
-  
+.title {
+  font-size: 3rem; //overwrites Bulma
+}
+.title span {
   color: rgb(180, 2, 2);
 }
 
 
+/* ---------------------------- */
+/*  FORM                        */
+/* ---------------------------- */
 
-/*https://keithclark.co.uk/articles/single-element-pure-css-pie-charts/*/
+form.my-styles {
+  justify-content: center;
+}
+
+.my-styles input {
+  max-width: 15%;
+  width: 15%;
+  margin: 0 0.5rem;
+}
+
+.my-styles label {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+.my-styles button {
+  background-color: rgb(180, 2, 2);
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+/* ---------------------------- */
+/*  CARDS                       */
+/* ---------------------------- */
+/* these overwrite Bulma */
+
+.card {
+  height: 100%;
+}
+.card-image {
+  display: flex; 
+  justify-content: center;
+}
+.image{
+  width: 150px;
+  margin: 1rem;
+}
+img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  border-radius: 100%;
+}
+.candidateName {
+  font-weight: bold; 
+  font-size: 1.45rem;
+}
+.candidateParty {
+  font-size: 1.55rem;
+  line-height: 1;
+}
+.candidateWebsite{
+  color: rgb(122, 121, 121);
+  text-decoration: underline;
+}
+
+
+
+/* ---------------------------- */
+/*  PIE CHART                   */
+/* ---------------------------- */
+/* learnt from https://keithclark.co.uk/articles/single-element-pure-css-pie-charts/ */
+
 .pie {
   /* Basic layout */
   min-width: 200px;
@@ -174,6 +213,32 @@ h2 {
     rgb(180, 2, 2) 0 calc(3.6deg * var(--segment2, 100)),
   );
 }
+/* added our own label */
+.chart-label {
+  font-size: 1.15rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #left-box {
   display: flex;
@@ -192,74 +257,29 @@ h2 {
   margin: 20px;
   font-size: 1.5rem;
 }
-#right-box span {
-  font-weight: bold;
-  margin-right: 15px;
-  font-size: 1.75rem;
-}
 
-#turnout {
-  font-size: 18px;
-}
 
-nav {
-  background-color: #111;
-  font-size: 20px;
-  text-transform: uppercase;
-  padding: 15px;
-  color: white;
-}
 
-nav a, nav a:hover {
-  color: white;
-}
+
+
 
 
 .flex-container {
   display: flex;
   flex-direction: column;
 }
-
 .flex-container div {
   min-height: 10rem;
 }
-.tagline {
-  color: #999999;
-  font-size: 2rem;
-}
 
-/* ---------------------------- */
-/*  CONTAINERS                        */
-/* ---------------------------- */
-
-.flex-horizontal {
-  display: flex;
-  flex-direction: row;
-}
-
-footer.my-styles {
-  background-color: #333;
-  font-size: 1rem;
-  color: #ddd;
-}
 
 
 /* ---------------------------- */
-/*  FORM                        */
+/*  CONTAINERS                  */
 /* ---------------------------- */
 
-form.my-styles {
-  justify-content: center;
-}
 
-.my-styles input {
-  max-width: 15%;
-  width: 15%;
-}
 
-.my-styles label {
-  color: white;
-  font-size: 1.25rem;
-  margin-right: 0.75rem;
-}
+
+
 

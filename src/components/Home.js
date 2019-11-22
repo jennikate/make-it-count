@@ -2,7 +2,7 @@ import React from 'react'
 import PostcodeSearch from './PostcodeSearch'
 
 const Home = () => (
-  <section className='hero is-fullheight home' id="hero">
+  <section className='hero is-fullheight home hero-colored'>
     <div className='hero-body'>
       <div className='container flex-container'>
         <div>

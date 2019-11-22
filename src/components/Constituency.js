@@ -48,6 +48,7 @@ class Constituency extends React.Component {
       case 'Liberal Democrats': partyUrl = 'https://www.libdems.org.uk/'; break
       case 'Conservative and Unionist Party': partyUrl = 'https://vote.conservatives.com/'; break
       case 'The Brexit Party': partyUrl = 'https://www.thebrexitparty.org/'; break
+      case 'Social Democratic Party': partyUrl = 'https://sdp.org.uk/'; break
       default: null
     }
     return partyUrl
@@ -74,13 +75,13 @@ class Constituency extends React.Component {
                       <div className="card">
                         <div className='card-image'>
                           <figure className='image'>
-                            <img src={elem.images[0].image_url} />
+                            <img src={!elem.images[0] ? '/images/personplaceholder.jpg' : elem.images[0].image_url} />
                           </figure>
                         </div>
                         <div className='card-content'>
-                          <p id='candidateName'>{elem.name}</p>
-                          <p><a id='candidateParty' href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
-                          {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p><a id='candidateWebsite' href={elem.identifiers[this.getIndex(elem.identifiers)].value}>Candidate Website</a></p>}
+                          <p className='candidateName'>{elem.name}</p>
+                          <p><a className='candidateParty' href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
+                          {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p><a className='candidateWebsite' href={elem.identifiers[this.getIndex(elem.identifiers)].value}>Candidate Website</a></p>}
                         </div>
                       </div>
                     </div>

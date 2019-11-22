@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
-// import Constituency from './Constituency'
 
 
 class PostcodeSearch extends React.Component {

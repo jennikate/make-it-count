@@ -18,9 +18,7 @@ class ElectionResults extends React.Component {
   }
 
   getThisConstituency(elem) {
-
     const i = this.state.electionResults.findIndex(p => p.constituency.label._value === elem) < 0 ? null : this.state.electionResults.findIndex(p => p.constituency.label._value === elem)
-    // console.log('index', i)
     return i
   }
 
@@ -37,7 +35,7 @@ class ElectionResults extends React.Component {
 
     return (
       <>
-      <section className='hero is-fullheight' id='hero-background'>
+      <section className='hero is-fullheight hero-colored'>
         <div className='hero-body'>
           <div className='container'>
             <h2 className='title'>2017 General Election Results</h2>
@@ -46,7 +44,7 @@ class ElectionResults extends React.Component {
             <div className='columns is-centered'>
               <div className='column is-one-quarter' id='left-box'>
 
-                <small id='turnout'>Voter Turnout</small>
+                <small className='chart-label'>Voter Turnout</small>
                 <div className="pie" style={{ '--segment1': thisTurnoutRate, '--segment2': thisNonVoter }}></div>
               </div>
               <div className='column is-one-quarter' id='right-box'>
