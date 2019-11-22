@@ -213,3 +213,17 @@ nav {
 nav a, nav a:hover {
   color: white;
 }
+
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-container div {
+  min-height: 10rem;
+}
+.tagline {
+  color: #999999;
+  font-size: 2rem;
+}

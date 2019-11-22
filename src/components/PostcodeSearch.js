@@ -31,24 +31,22 @@ class PostcodeSearch extends React.Component {
       .catch(err => this.setState({ errors: err.response.data.error }))
   }
 
-  
+
 
   render() {
     return (
       <form id='form' onSubmit={(e) => this.handleSubmit(e)}>
-        <div className='field has-addons'>
+        <div className='field is-horizontal'>
           <div className='field-label is-normal'>
-            <label className='label' htmlFor='postcode'>Postcode</label>
+            <label className='label' htmlFor='postcode'>Enter postcode</label>
           </div>
           <div className='field-body'>
-            <div className='field'>
-              <p className='control'>
-                <input className='input' name='postcode' type='text' id='postcode' onChange={(e) => this.handleUpdate(e)} />
-                {this.state.errors && <small className='help is-danger'>
-                  {this.state.errors}
-                </small>}
-              </p>
-            </div>
+            <p className='control'>
+              <input className='input' name='postcode' type='text' id='postcode' onChange={(e) => this.handleUpdate(e)} />
+              {this.state.errors && <small className='help is-danger'>
+                {this.state.errors}
+              </small>}
+            </p>
           </div>
           <button className="button">Search</button>
         </div>

@@ -4,9 +4,14 @@ import PostcodeSearch from './PostcodeSearch'
 const Home = () => (
   <section className='hero is-fullheight home' id="hero">
     <div className='hero-body'>
-      <div className='container'>
-        <h1 className='line-1 anim-typewriter has-text-centered'>Make it count</h1>
-        <PostcodeSearch />
+      <div className='container flex-container'>
+        <div>
+          <p className='tagline'>The election is coming ...</p>
+        </div>
+        <div>
+          <h1 className='line-1 anim-typewriter has-text-centered'>Make it count</h1>
+          <PostcodeSearch />
+        </div>
       </div>
     </div>
   </section>
