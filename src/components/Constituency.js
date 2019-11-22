@@ -28,20 +28,21 @@ class Constituency extends React.Component {
           const persons = oldArray.concat(resp.data)
           this.setState({ persons })
         })
+
     })
   }
 
   getIndex(elem) {
-    const i = elem.findIndex(p => p.value_type === 'party_ppc_page_url') < 0 ?  null : elem.findIndex(p => p.value_type === 'party_ppc_page_url')
+    const i = elem.findIndex(p => p.value_type === 'party_ppc_page_url') < 0 ? null : elem.findIndex(p => p.value_type === 'party_ppc_page_url')
     return i
   }
 
   getPartyUrl(elem) {
     let partyUrl
     switch (elem) {
-      case 'Labour Party' : partyUrl = 'https://labour.org.uk/'; break
-      case 'Green Party' : partyUrl =  'https://my.greenparty.org.uk/'; break
-      default : null
+      case 'Labour Party': partyUrl = 'https://labour.org.uk/'; break
+      case 'Green Party': partyUrl = 'https://my.greenparty.org.uk/'; break
+      default: null
     }
     return partyUrl
   }
@@ -52,29 +53,27 @@ class Constituency extends React.Component {
     }
     return (
       < section className='section' >
-        <h1 className='title'>{this.props.match.params.id}</h1>
+        <h1 className='title'>{`Your Constituency: ${this.props.match.params.id}`}</h1>
         <div className='container'>
-          <div className='column is-half-mobile is-one-third-tablet is-one-quarter-desktop'>
-
-
+          <div className="columns is-mobile is-multiline">
             {this.state.persons.map((elem, i) => {
               return (
-                <div key={i} className="card">
-                  <div className='card-image'>
-                    <figure className='image is-4by3'>
-                      <img src={elem.images[0].image_url} />
-                    </figure>
-                  </div>
-                  <div className='card-content'>
-                    <p>{elem.name}</p>
-                    <p><a href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
-                    {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p>{elem.identifiers[this.getIndex(elem.identifiers)].value}</p>}
+                <div key={i} className='column is-half-mobile is-one-third-tablet is-one-quarter-desktop'>
+                  <div className="card">
+                    <div className='card-image'>
+                      <figure className='image'>
+                        <img src={elem.images[0].image_url} />
+                      </figure>
+                    </div>
+                    <div className='card-content'>
+                      <p>{elem.name}</p>
+                      <p><a href={this.getPartyUrl(elem.candidacies[(elem.candidacies.length - 1)].party.name)} >{elem.candidacies[(elem.candidacies.length - 1)].party.name}</a></p>
+                      {!elem.identifiers[this.getIndex(elem.identifiers)] ? <p></p> : <p>{elem.identifiers[this.getIndex(elem.identifiers)].value}</p>}
+                    </div>
                   </div>
                 </div>
               )
             })}
-
-
           </div>
         </div>
       </section >

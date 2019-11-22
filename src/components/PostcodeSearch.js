@@ -35,8 +35,8 @@ class PostcodeSearch extends React.Component {
 
   render() {
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)}>
-        <div className='field is-horizontal'>
+      <form id='form' onSubmit={(e) => this.handleSubmit(e)}>
+        <div className='field has-addons'>
           <div className='field-label is-normal'>
             <label className='label' htmlFor='postcode'>Postcode</label>
           </div>
@@ -50,9 +50,7 @@ class PostcodeSearch extends React.Component {
               </p>
             </div>
           </div>
-
-          <button>go</button>
-
+          <button className="button">Search</button>
         </div>
       </form>
     )
