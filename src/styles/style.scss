@@ -237,6 +237,12 @@ nav a, nav a:hover {
   flex-direction: row;
 }
 
+footer.my-styles {
+  background-color: #333;
+  font-size: 1rem;
+  color: #ddd;
+}
+
 
 /* ---------------------------- */
 /*  FORM                        */
@@ -256,3 +262,4 @@ form.my-styles {
   font-size: 1.25rem;
   margin-right: 0.75rem;
 }
+
