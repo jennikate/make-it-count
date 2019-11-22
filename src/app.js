@@ -7,12 +7,14 @@ import './styles/style.scss'
 
 import Home from './components/Home'
 import Constituency from './components/Constituency'
+import ElectionResults from './components/ElectionResults'
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/constituency/:id' component={Constituency} />
+      <Route exact path='/2017' component={ElectionResults} />
     </Switch>
   </BrowserRouter>
 

@@ -6,17 +6,35 @@ class ElectionResults extends React.Component {
   constructor() {
     super()
     this.state = {
-      candidates: [],
-      persons: []
+      electionResults: [
+        {
+          constituency: {
+            label: {}
+          }
+        }
+      ]
     }
   }
 
   componentDidMount() {
-    const constituencyFormatted = this.props.match.params.id.toLowerCase().split(' ').join('-')
-    axios.get(`https://candidates.democracyclub.org.uk/api/next/ballots/parl.${constituencyFormatted}.2019-12-12/`)
-      .then(resp => this.setState({ candidates: resp.data.candidacies }, () => this.getCandidate2()))
+    axios.get('http://lda.data.parliament.uk/electionresults.json?_view=Elections&_pageSize=1000&_page=0&electionId=730039')
+      .then(resp => this.setState({ electionResults: resp.data.result.items }))
       .catch(err => console.log(err.response.data.error))
+  }
 
+  render() {
+    
+    console.log(Array.isArray(this.state.electionResults[0].constituency))
+    console.log(this.state.electionResults[0].constituency.label._value)
+    console.log(this.state.electionResults[0].resultOfElection)
+    console.log(this.state.electionResults[0].electorate)
+    console.log(this.state.electionResults[0].majority)
+    console.log(this.state.electionResults[0].turnout)
+    return (
+      <div>
+        hi
+      </div>
+    )
   }
 
 }
