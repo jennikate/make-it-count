@@ -79,9 +79,7 @@ class Constituency extends React.Component {
             </div>
           </div>
         </section >
-        <section className='section'>
-          <ElectionResults constituencyName={this.props.match.params.id} />
-        </section>
+        <ElectionResults constituencyName={this.props.match.params.id} />
       </div>
     )
   }

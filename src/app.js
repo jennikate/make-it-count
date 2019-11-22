@@ -14,7 +14,6 @@ const App = () => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/constituency/:id' component={Constituency} />
-      <Route exact path='/2017' component={ElectionResults} />
     </Switch>
   </BrowserRouter>
 

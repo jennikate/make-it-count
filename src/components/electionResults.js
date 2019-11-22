@@ -6,13 +6,7 @@ class ElectionResults extends React.Component {
   constructor() {
     super()
     this.state = {
-      electionResults: [
-        {
-          constituency: {
-            label: {}
-          }
-        }
-      ]
+      electionResults: []
     }
   }
 
@@ -25,14 +19,21 @@ class ElectionResults extends React.Component {
   getThisConstituency(elem) {
 
     const i = this.state.electionResults.findIndex(p => p.constituency.label._value === elem) < 0 ? null : this.state.electionResults.findIndex(p => p.constituency.label._value === elem) 
-    console.log('index', i)
+    // console.log('index', i)
+    return i
   }
 
 
   render() {
+    if (this.state.electionResults.length === 0) {
+      return <h1>...Loading</h1>
+    }
 
-    console.log(this.getThisConstituency(this.props.constituencyName))
-    // console.log(Array.isArray(this.state.electionResults[0].constituency))
+    // console.log(this.getThisConstituency(this.props.constituencyName))
+    console.log(Array.isArray(this.state.electionResults[1]))
+    console.log(typeof this.state.electionResults[1])
+    console.log(this.state.electionResults[this.getThisConstituency(this.props.constituencyName)].resultOfElection)
+    // console.log(this.state.electionResults)
     // console.log(this.state.electionResults[0].constituency.label._value)
     // console.log(this.state.electionResults[0].resultOfElection)
     // console.log(this.state.electionResults[0].electorate)
