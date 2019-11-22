@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Footer from './Footer'
 
 
 class ElectionResults extends React.Component {
@@ -35,7 +36,7 @@ class ElectionResults extends React.Component {
     const thisNonVoter = ((thisElectorate - thisTurnout) / thisElectorate) * 100
 
     return (
-
+      <>
       <section className='hero is-fullheight' id='hero-background'>
         <div className='hero-body'>
           <div className='container'>
@@ -63,6 +64,8 @@ class ElectionResults extends React.Component {
           </div>
         </div>
       </section>
+      <Footer />
+      </>
     )
   }
 
