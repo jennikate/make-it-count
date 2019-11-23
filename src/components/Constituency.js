@@ -26,8 +26,8 @@ class Constituency extends React.Component {
   getCandidate2() {
     const arr = this.state.candidates
     arr.forEach(element => {
-      console.log(element.person.url)
-      axios.get(element.person.url)
+      const thisUrl = element.person.url.split(':')
+      axios.get('https:' + thisUrl[1])
         .then(resp => {
           const oldArray = [...this.state.persons]
           const persons = oldArray.concat(resp.data)
