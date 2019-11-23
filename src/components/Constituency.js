@@ -15,6 +15,7 @@ class Constituency extends React.Component {
   }
 
   componentDidMount() {
+    console.log('const page compdidmount')
     const constituencyFormatted = this.props.match.params.id.toLowerCase().split(' ').join('-')
     axios.get(`https://candidates.democracyclub.org.uk/api/next/ballots/parl.${constituencyFormatted}.2019-12-12/`)
       .then(resp => this.setState({ candidates: resp.data.candidacies }, () => this.getCandidate2()))
