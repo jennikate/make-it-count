@@ -65,7 +65,7 @@ class Constituency extends React.Component {
     return (
       <div>
         <nav>
-          <Link to='/' className='logo'>Make it count</Link>
+          <Link to='/make-it-count' className='logo'>Make it count</Link>
         </nav>
         <section className='hero is-fullheight'>
           <div className='hero-body'>

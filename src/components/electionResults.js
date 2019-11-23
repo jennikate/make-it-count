@@ -12,7 +12,7 @@ class ElectionResults extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://lda.data.parliament.uk/electionresults.json?_view=Elections&_pageSize=1000&_page=0&electionId=730039')
+    axios.get('https://lda.data.parliament.uk/electionresults.json?_view=Elections&_pageSize=1000&_page=0&electionId=730039')
       .then(resp => this.setState({ electionResults: resp.data.result.items }))
       .catch(err => console.log(err.response.data.error))
   }
