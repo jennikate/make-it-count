@@ -9,6 +9,7 @@
     "build": "webpack -p",
     "deploy": "yarn build && gh-pages -d dist"
   },
+  "homepage": "https://jennikate.github.io/make-it-count",
   "author": "Abi James & JenniKate Wallace",
   "license": "ISC",
   "devDependencies": {
