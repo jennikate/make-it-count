@@ -21,7 +21,6 @@ class PostcodeSearch extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('getting postcode')
     e.preventDefault()
     axios.get(`https://api.postcodes.io/postcodes/${this.state.postcode}`)
       .then(resp => {

@@ -15,7 +15,6 @@ class Constituency extends React.Component {
   }
 
   componentDidMount() {
-    console.log('const page compdidmount')
     const constituencyFormatted = this.props.match.params.id.toLowerCase().split(' ').join('-')
     axios.get(`https://candidates.democracyclub.org.uk/api/next/ballots/parl.${constituencyFormatted}.2019-12-12/`)
       .then(resp => this.setState({ candidates: resp.data.candidacies }, () => this.getCandidate2()))
@@ -80,7 +79,7 @@ class Constituency extends React.Component {
                       <div className="card">
                         <div className='card-image'>
                           <figure className='image'>
-                            <img src={!elem.images[0] ? '/images/personplaceholder.jpg' : elem.images[0].image_url} />
+                            <img src={!elem.images[0] ? '/make-it-count/images/personplaceholder.jpg' : elem.images[0].image_url} />
                           </figure>
                         </div>
                         <div className='card-content'>
