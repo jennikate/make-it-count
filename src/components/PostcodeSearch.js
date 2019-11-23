@@ -22,7 +22,7 @@ class PostcodeSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    axios.get(`http://api.postcodes.io/postcodes/${this.state.postcode}`)
+    axios.get(`https://api.postcodes.io/postcodes/${this.state.postcode}`)
       .then(resp => {
         this.setState({ parliamentaryConstituency: resp.data.result.parliamentary_constituency })
         this.props.history.push(`/constituency/${resp.data.result.parliamentary_constituency}`)
