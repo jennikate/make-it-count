@@ -12,7 +12,7 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/make-it-count' component={Home} />
-      <Route exact path='/constituency/:id' component={Constituency} />
+      <Route exact path='/make-it-count/constituency/:id' component={Constituency} />
     </Switch>
   </BrowserRouter>
 
