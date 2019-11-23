@@ -79,7 +79,7 @@ class Constituency extends React.Component {
                       <div className="card">
                         <div className='card-image'>
                           <figure className='image'>
-                            <img src={!elem.images[0] ? '/make-it-count/images/personplaceholder.jpg' : elem.images[0].image_url} />
+                            <img src={!elem.images[0] ? 'https://raw.githubusercontent.com/jennikate/make-it-count/master/src/images/personplaceholder.jpg' : elem.images[0].image_url} />
                           </figure>
                         </div>
                         <div className='card-content'>
