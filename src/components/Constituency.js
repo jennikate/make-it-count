@@ -49,7 +49,8 @@ class Constituency extends React.Component {
       case 'Conservative and Unionist Party': partyUrl = 'https://vote.conservatives.com/'; break
       case 'The Brexit Party': partyUrl = 'https://www.thebrexitparty.org/'; break
       case 'Social Democratic Party': partyUrl = 'https://sdp.org.uk/'; break
-      default: null
+      case 'Independent': partyUrl = 'https://whocanivotefor.co.uk/parties/ynmp-party:2/independent'; break
+      default: partyUrl = 'https://whocanivotefor.co.uk/parties/'
     }
     return partyUrl
   }
@@ -58,6 +59,8 @@ class Constituency extends React.Component {
     if (!this.state.persons.length === 0) {
       return <h1>...Loading</h1>
     }
+
+    
     return (
       <div>
         <nav>

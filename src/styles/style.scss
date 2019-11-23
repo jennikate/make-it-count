@@ -98,6 +98,9 @@ footer.my-styles {
 footer.my-styles a {
   color: #dddddd;
 }
+footer.my-styles a:hover {
+  color: #3273dc;
+}
 
 
 /* ---------------------------- */
@@ -271,15 +274,3 @@ img {
 .flex-container div {
   min-height: 10rem;
 }
-
-
-
-/* ---------------------------- */
-/*  CONTAINERS                  */
-/* ---------------------------- */
-
-
-
-
-
-
