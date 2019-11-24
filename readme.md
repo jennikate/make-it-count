@@ -91,8 +91,8 @@ This takes the constituency name, searches our data set for the constituency lab
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/jennikate/make-it-count/src/images/for-readme/screenshot1.png" border="1" width=45%> <img src="https://raw.githubusercontent.com/jennikate/make-it-count/src/images/for-readme/screenshot2.png" border="1" width=45%>
-<img src="https://raw.githubusercontent.com/jennikate/make-it-count/src/images/for-readme/screenshot3.png" border="1" width=45%> 
+<img src="https://raw.githubusercontent.com/jennikate/make-it-count/master/src/images/for-readme/screenshot1.png" border="1" width=45%> <img src="https://raw.githubusercontent.com/jennikate/make-it-count/master/src/images/for-readme/screenshot2.png" border="1" width=45%>
+<img src="https://raw.githubusercontent.com/jennikate/make-it-count/master/src/images/for-readme/screenshot3.png" border="1" width=45%> 
 
 
 ### Bugs
