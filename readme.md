@@ -78,7 +78,7 @@ The site takes a UK postcode then does the following
 We take the data set that we stored in election Results, then call the function that finds the array index based on the constituencyName that we have passed in. Then we return the result of the election for that array index.
 
 
-<img src="https://raw.githubusercontent.com/jennikate/make-it-count/blob/github-pages/src/images/for-readme/code1b.png?raw=true" border="1" width=45%> 
+<img src="https://raw.githubusercontent.com/jennikate/make-it-count/master/src/images/for-readme/code1b.png" border="1" width=45%> 
 
 This takes the constituency name, searches our data set for the constituency label value that matches our constituency name, then returns the index number of that array position.
 
@@ -91,8 +91,8 @@ This takes the constituency name, searches our data set for the constituency lab
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/jennikate/make-it-count/blob/github-pages/src/images/for-readme/screenshot1.png?raw=true" border="1" width=45%> <img src="https://raw.githubusercontent.com/jennikate/make-it-count/blob/github-pages/src/images/for-readme/screenshot2.png?raw=true" border="1" width=45%>
-<img src="https://raw.githubusercontent.com/jennikate/make-it-count/blob/github-pages/src/images/for-readme/screenshot3.png?raw=true" border="1" width=45%> 
+<img src="https://raw.githubusercontent.com/jennikate/make-it-count/src/images/for-readme/screenshot1.png" border="1" width=45%> <img src="https://raw.githubusercontent.com/jennikate/make-it-count/src/images/for-readme/screenshot2.png" border="1" width=45%>
+<img src="https://raw.githubusercontent.com/jennikate/make-it-count/src/images/for-readme/screenshot3.png" border="1" width=45%> 
 
 
 ### Bugs
