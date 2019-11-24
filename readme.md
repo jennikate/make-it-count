@@ -1,5 +1,7 @@
 # Project 3: APIs and React, a pair programming project
 
+by [Abi James]() &  [JenniKate Wallace](https://github.com/jennikate/)
+
 ## Overview
 A website designed to allow you to enter a UK postcode to see which candidates are standing for the general election in your constituency. You can also see which party won the last general election (in 2017) and voter numbers.
 
