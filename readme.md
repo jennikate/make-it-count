@@ -1,14 +1,13 @@
 # Project 3: APIs and React, a pair programming project
 
-by [Abi James]() &  [JenniKate Wallace](https://github.com/jennikate/)
+by [Abi James](https://github.com/ajames14/make-it-count) &  [JenniKate Wallace](https://github.com/jennikate/)
 
 ## Overview
-A website designed to allow you to enter a UK postcode to see which candidates are standing for the general election in your constituency. You can also see which party won the last general election (in 2017) and voter numbers.
+A website designed to allow you to enter a UK postcode to find your constituency and see which candidates are standing for the general election, with the aim of helping voters to understand their options. You can also see which party won the last general election (in 2017) and voter numbers.
 
 [Take a look on GitHub Pages.](https://jennikate.github.io/make-it-count/)
 
 [Check out the GitHub Repo here.](https://github.com/jennikate/make-it-count)
-
 
 ## Brief
 
@@ -59,7 +58,7 @@ The site takes a UK postcode then does the following
 - translates this to a format usable in the Democracy Club URL (e.g. `epsom-and-ewell`)
 - fetches the `candidate list` from the Democracy Club candidates API
 - takes the `candidate URL` from that API
-- fetches the `person information` from the Democracy Club person API
+- fetches the `person information` from the Democracy Club person API using the `candidate URL`. 
 - fetches the `2017 election results` from the data.parliament.uk API
 - filters the `2017 election results` and returns the results for the `parliamentary constituency` 
 
@@ -83,10 +82,13 @@ We take the data set that we stored in election Results, then call the function 
 This takes the constituency name, searches our data set for the constituency label value that matches our constituency name, then returns the index number of that array position.
 
 
-<!-- #### Featured piece of code 2:  -->
+#### Featured piece of code 2: Using the URL from the candidates list API to fetch the data for each candidate
 
+In the getCandidates2 function, we define an array, arr, equal to the existing state of candidates array. For each object in this array, we find the individual candidate URL which we will use to retrieve their details from the Democracy Club Person API. 
 
+<img src="/images/for-readme/code2.png" border="1" width=45%> 
 
+We fetch the data for each candidate and concatenate the response to the 'persons' array, setting the state of persons after each loop so that it contains a set of objects with all the relevant information for the candidates. This allows us to map the persons array to render the details for each candidate. 
 
 
 ### Screenshots
@@ -110,12 +112,11 @@ Working as a team. We both brought different ways of thinking to the project and
 
 1. Deciphering the APIs, especially data.parliament.uk, to find data that was useful and usable
 2. Learning how to take data from an API and store it in an array with setState
+3. Learning how to pass params on to children of children components using withRouter()
 
+The biggest challenges were around some of the more React specific syntax that we hadn't used very much. 
 
-
-The biggest challenges were around some of the more React specific syntax that we hadn't used much. 
-
-Pushing data to an array via setState in a forEach loop, which requires you to get the existing state, add the new item, then set it all back to the state - all within the loop.
+Pushing data to an array via setState in a forEach loop as shown in the code snippet above, which requires you to get the existing state, add the new item, then set it all back to the state - all within the loop.
 
 Moving data between classes - we learnt how to pass params on the Route calls, and also learnt how child components inherit parent components, but children of children do not unless you encase it in a wrapper!
 
