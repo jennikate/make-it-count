@@ -213,7 +213,7 @@ img {
 .pie {
   background-image: conic-gradient(
     #e7e7e7 calc(3.6deg * var(--segment1, 100)),
-    rgb(180, 2, 2) 0 calc(3.6deg * var(--segment2, 100)),
+    rgb(180, 2, 2) 0  calc(3.6deg * var(--segment2, 100)),
   );
 }
 /* added our own label */

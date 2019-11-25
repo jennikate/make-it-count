@@ -45,7 +45,7 @@ class ElectionResults extends React.Component {
               <div className='column is-one-quarter' id='left-box'>
 
                 <small className='chart-label'>Voter Turnout</small>
-                <div className="pie" style={{ '--segment1': thisTurnoutRate, '--segment2': thisNonVoter }}></div>
+                <div className="pie" style={{ '--segment1': thisNonVoter, '--segment2': thisTurnoutRate }}></div>
               </div>
               <div className='column is-one-quarter' id='right-box'>
                 <div>
