@@ -1,14 +1,13 @@
 # Project 3: APIs and React, a pair programming project
 
-by [Abi James]() &  [JenniKate Wallace](https://github.com/jennikate/)
+by [Abi James](https://github.com/ajames14/make-it-count) &  [JenniKate Wallace](https://github.com/jennikate/)
 
 ## Overview
 A website designed to allow you to enter a UK postcode to find your constituency and see which candidates are standing for the general election, with the aim of helping voters to understand their options. You can also see which party won the last general election (in 2017) and voter numbers.
 
 [Take a look on GitHub Pages.](https://jennikate.github.io/make-it-count/)
 
-[Check out Jenni's GitHub Repo here.](https://github.com/jennikate/make-it-count)
-[And Abi's Github Repo here.](https://github.com/ajames14/make-it-count)
+[Check out the GitHub Repo here.](https://github.com/jennikate/make-it-count)
 
 ## Brief
 
