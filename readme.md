@@ -86,7 +86,7 @@ This takes the constituency name, searches our data set for the constituency lab
 
 In the getCandidates2 function, we define an array, arr, equal to the existing state of candidates array. For each object in this array, we find the individual candidate URL which we will use to retrieve their details from the Democracy Club Person API. 
 
-<img src="/images/for-readme/code2.png" border="1" width=45%> 
+<img src="https://raw.githubusercontent.com/jennikate/make-it-count/master/src/images/for-readme/code2.png" border="1" width=45%> 
 
 We fetch the data for each candidate and concatenate the response to the 'persons' array, setting the state of persons after each loop so that it contains a set of objects with all the relevant information for the candidates. This allows us to map the persons array to render the details for each candidate. 
 
